@@ -8,58 +8,208 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7e22ce;
+            --accent: #f97316;
+        }
+        
+        body {
+            font-family: 'Be Vietnam Pro';
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: -250px;
+            right: -250px;
+            background: radial-gradient(rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            bottom: -200px;
+            left: -200px;
+            background: radial-gradient(rgba(126, 34, 206, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        .connector-line {
+            position: relative;
+        }
+        
+        .connector-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 60px;
+            height: 2px;
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+        
+        @media (max-width: 768px) {
+            .connector-line::after {
+                display: none;
+            }
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <img src="logo.svg" alt="Libro Mastro Logo" class="w-8 h-8 mr-3">
+                    <div class="w-8 h-8 mr-3 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
                     <h1 class="text-2xl font-bold text-gray-900">Libro Mastro</h1>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#come-funziona" class="text-gray-600 hover:text-blue-600">Come Funziona</a>
-                    <a href="#vantaggi" class="text-gray-600 hover:text-blue-600">Vantaggi</a>
-                    <a href="#your-github-repo-link" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Inizia Ora</a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#come-funziona" class="text-gray-600 hover:text-blue-600 transition-colors">Come Funziona</a>
+                    <a href="#vantaggi" class="text-gray-600 hover:text-blue-600 transition-colors">Vantaggi</a>
+                    <a href="#your-github-repo-link" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all hover-lift">Inizia Ora</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+    <section class="hero-gradient py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                    Basta perdere tempo con <br>
-                    <span class="text-blue-600">fogli Excel sparsi</span>
-                </h2>
-                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Collega automaticamente la tua contabilità, i clienti e i fogli Google. 
-                    Tutti i dati della tua azienda in un unico posto, sempre aggiornati.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#your-github-repo-link" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
-                        Inizia gratuitamente 
-                    </a>
-                    <a href="https://staticalmo.com/contact/" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition">
-                        Prenota una chiamata gratuita
-                    </a>
+            <div class="text-center relative z-20">
+                <div data-aos="fade-up" data-aos-duration="800">
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Basta perdere tempo con <br>
+                        <span class="text-blue-600">fogli Excel sparsi</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Collega automaticamente la tua contabilità, i clienti e i fogli Google. 
+                        Tutti i dati della tua azienda in un unico posto, sempre aggiornati.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#your-github-repo-link" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all hover-lift inline-flex items-center justify-center">
+                            Inizia gratuitamente 
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                        <a href="https://staticalmo.com/contact/" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all hover-lift inline-flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            Prenota una chiamata gratuita
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16 floating" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="bg-white p-6 rounded-2xl shadow-xl inline-block">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-blue-100 p-4 rounded-lg">
+                                <div class="h-4 bg-blue-300 rounded mb-2"></div>
+                                <div class="h-2 bg-blue-200 rounded"></div>
+                            </div>
+                            <div class="bg-green-100 p-4 rounded-lg">
+                                <div class="h-4 bg-green-300 rounded mb-2"></div>
+                                <div class="h-2 bg-green-200 rounded"></div>
+                            </div>
+                            <div class="bg-purple-100 p-4 rounded-lg">
+                                <div class="h-4 bg-purple-300 rounded mb-2"></div>
+                                <div class="h-2 bg-purple-200 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Problem Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white grid-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">Ti riconosci in questa situazione?</h3>
+                <p class="text-xl text-gray-600">I problemi più comuni che risolviamo ogni giorno</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-red-50 rounded-xl">
+                <div class="text-center p-6 bg-white rounded-xl shadow-md hover-lift transition-all" data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
@@ -68,7 +218,7 @@
                     <h4 class="text-xl font-semibold text-gray-900 mb-2">Dati sparsi ovunque</h4>
                     <p class="text-gray-600">Fatture in un programma, clienti in un altro, report in Excel. Impossibile avere una visione d'insieme.</p>
                 </div>
-                <div class="text-center p-6 bg-red-50 rounded-xl">
+                <div class="text-center p-6 bg-white rounded-xl shadow-md hover-lift transition-all" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
@@ -77,7 +227,7 @@
                     <h4 class="text-xl font-semibold text-gray-900 mb-2">Errori e duplicati</h4>
                     <p class="text-gray-600">Copiare dati a mano significa errori garantiti. E quando sbagli, te ne accorgi sempre troppo tardi.</p>
                 </div>
-                <div class="text-center p-6 bg-red-50 rounded-xl">
+                <div class="text-center p-6 bg-white rounded-xl shadow-md hover-lift transition-all" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
@@ -93,12 +243,12 @@
     <!-- Solution Section -->
     <section id="come-funziona" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">La soluzione è più semplice di quanto pensi</h3>
                 <p class="text-xl text-gray-600">Libro Mastro collega automaticamente tutti i tuoi sistemi</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="text-center">
+                <div class="text-center connector-line" data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
@@ -107,7 +257,7 @@
                     <h4 class="text-xl font-semibold text-gray-900 mb-3">1. Colleghi i tuoi sistemi</h4>
                     <p class="text-gray-600">Connetti la tua contabilità, il CRM clienti e i fogli Google con pochi click. Nessuna programmazione richiesta.</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center connector-line" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
@@ -116,7 +266,7 @@
                     <h4 class="text-xl font-semibold text-gray-900 mb-3">2. I dati si sincronizzano</h4>
                     <p class="text-gray-600">Libro Mastro trasferisce automaticamente i dati tra i sistemi. Sempre aggiornati, sempre corretti.</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
@@ -124,7 +274,19 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold text-gray-900 mb-3">3. Ottieni report perfetti</h4>
-                    <p class="text-gray-600"> Cruscotti e report sempre aggiornati. Prendi decisioni basate sulla tua intera banca dati, non ricordi o ipotesi.</p>
+                    <p class="text-gray-600">Cruscotti e report sempre aggiornati. Prendi decisioni basate sulla tua intera banca dati, non ricordi o ipotesi.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="zoom-in">
+                <div class="video-container">
+                    <!-- Placeholder for video - replace with actual video embed code -->
+                    <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,11 +295,12 @@
     <!-- Features Section -->
     <section id="vantaggi" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">Cosa puoi collegare</h3>
+                <p class="text-xl text-gray-600">Integrazioni immediate con le piattaforme che usi ogni giorno</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
+                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all hover-lift" data-aos="fade-up" data-aos-delay="100">
                     <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
@@ -146,7 +309,7 @@
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">Software di contabilità</h4>
                     <p class="text-gray-600">FattureInCloud, Aruba, etc.</p>
                 </div>
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
+                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all hover-lift" data-aos="fade-up" data-aos-delay="200">
                     <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
@@ -155,17 +318,17 @@
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">CRM clienti</h4>
                     <p class="text-gray-600">HubSpot, Salesforce, etc.</p>
                 </div>
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
+                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all hover-lift" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"/>
                         </svg>
                     </div>
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">Fogli di calcolo</h4>
-                    <p class="text-gray-600"> Excel (file), Fogli di Google, Airtable</p>
+                    <p class="text-gray-600">Excel (file), Fogli di Google, Airtable</p>
                 </div>
                 
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition lg:col-start-2">
+                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all hover-lift lg:col-start-2" data-aos="fade-up" data-aos-delay="400">
                     <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
@@ -174,7 +337,6 @@
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">E-commerce</h4>
                     <p class="text-gray-600">Shopify, WooCommerce, Magento - sincronizza ordini e inventario</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -182,37 +344,37 @@
     <!-- Objections Section -->
     <section class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">
                     Forse ti stai chiedendo...
                 </h3>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
                     <h4 class="text-xl font-semibold text-gray-900 mb-2">"Ho già Excel, perché dovrei cambiare?"</h4>
                     <p class="text-gray-600">
                         Excel ha un altro scopo. Non ti conviene usarlo per centralizzare i tuoi dati. A meno che vuoi appesantirlo di molto.                        
                         Libro Mastro ti fa risparmiare tempo prezioso, evitando errori e duplicazioni.
                     </p>
                 </div>
-                <div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
                     <h4 class="text-xl font-semibold text-gray-900 mb-2">"Mi piace la flessibilità dei fogli di calcolo"</h4>
                     <p class="text-gray-600">
                         Libro Mastro può convertire alcune tabelle in fogli di calcolo.
                     </p>
                 </div>
-                <div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
                     <h4 class="text-xl font-semibold text-gray-900 mb-2">"Ho già Zapier"</h4>
                     <p class="text-gray-600">
                         Zapier fa meno cose, anche se ha più connettori, e costa di più a parita di compiti che effettivamente vuoi automatizzare.
                     </p>
                 </div>
-                <div>
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
                     <h4 class="text-xl font-semibold text-gray-900 mb-2">"Non ho budget per un altro software"</h4>
                         <p class="text-gray-600">
                             Puoi installare Libro Mastro sul tuo server, gratuitamente ma non senza costi: serve qualcuno che dedichi del tempo e sappia farlo.
                             <a href="https://staticalmo.com/contact/"
-                            class="text-blue-600 hover:underline">
+                            class="text-blue-600 hover:underline font-medium">
                                 Oppure puoi delegare l'installazione.
                             </a>
                         </p>
@@ -221,7 +383,21 @@
         </div>
     </section>
 
-    
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+            <h3 class="text-3xl font-bold mb-6">Pronto a unificare i tuoi dati?</h3>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">Inizia oggi stesso e liberati dalla confusione dei dati sparsi</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#your-github-repo-link" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all hover-lift">
+                    Inizia gratuitamente 
+                </a>
+                <a href="https://staticalmo.com/contact/" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                    Prenota una chiamata gratuita
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer id="contatti" class="bg-gray-900 text-white py-16">
@@ -240,22 +416,45 @@
                     <p class="text-gray-400 mb-4">La soluzione più semplice per unificare i dati della tua azienda.</p>
                 </div>
                 <div>
+                    <h5 class="font-semibold mb-4">Navigazione</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#come-funziona" class="hover:text-white transition-colors">Come Funziona</a></li>
+                        <li><a href="#vantaggi" class="hover:text-white transition-colors">Vantaggi</a></li>
+                        <li><a href="#your-github-repo-link" class="hover:text-white transition-colors">Inizia Ora</a></li>
+                    </ul>
+                </div>
                 <div>
                     <h5 class="font-semibold mb-4">Supporto</h5>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Video Tutorial</a></li>
-
+                        <li><a href="#" class="hover:text-white transition-colors">Video Tutorial</a></li>
+                        <li><a href="https://staticalmo.com/contact/" class="hover:text-white transition-colors">Contattaci</a></li>
                     </ul>
                 </div>
-            -->
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 STATiCalmo. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+            });
+            
+            // Simple mobile menu toggle
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const header = document.querySelector('header');
+                    header.classList.toggle('mobile-menu-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-</final_file_content>
-
-</replace_in_file>
