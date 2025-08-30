@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro Mastro - Unifica i Dati della Tua Azienda</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
@@ -16,19 +16,13 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"/>
-                        </svg>
-                    </div>
+                    <img src="logo.svg" alt="Libro Mastro Logo" class="w-8 h-8 mr-3">
                     <h1 class="text-2xl font-bold text-gray-900">Libro Mastro</h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#come-funziona" class="text-gray-600 hover:text-blue-600">Come Funziona</a>
                     <a href="#vantaggi" class="text-gray-600 hover:text-blue-600">Vantaggi</a>
-                    <a href="#prezzi" class="text-gray-600 hover:text-blue-600">Prezzi</a>
-                    <a href="#contatti" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Inizia Ora</a>
+                    <a href="#your-github-repo-link" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Inizia Ora</a>
                 </div>
             </div>
         </nav>
@@ -47,9 +41,9 @@
                     Tutti i dati della tua azienda in un unico posto, sempre aggiornati.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                    <a href="#your-github-repo-link" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
                         Inizia gratuitamente 
-                    </button>
+                    </a>
                     <a href="https://staticalmo.com/contact/" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition">
                         Prenota una chiamata gratuita
                     </a>
@@ -62,7 +56,7 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Ti Riconosci in Questa Situazione?</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Ti riconosci in questa situazione?</h3>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center p-6 bg-red-50 rounded-xl">
@@ -71,7 +65,7 @@
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Dati Sparsi Ovunque</h4>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Dati sparsi ovunque</h4>
                     <p class="text-gray-600">Fatture in un programma, clienti in un altro, report in Excel. Impossibile avere una visione d'insieme.</p>
                 </div>
                 <div class="text-center p-6 bg-red-50 rounded-xl">
@@ -80,7 +74,7 @@
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Errori e Duplicati</h4>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Errori e duplicati</h4>
                     <p class="text-gray-600">Copiare dati a mano significa errori garantiti. E quando sbagli, te ne accorgi sempre troppo tardi.</p>
                 </div>
                 <div class="text-center p-6 bg-red-50 rounded-xl">
@@ -89,7 +83,7 @@
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Tempo Sprecato</h4>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">Tempo sprecato</h4>
                     <p class="text-gray-600">Ore perse ogni settimana a copiare dati, fare calcoli e creare report. Tempo che potresti dedicare al tuo business.</p>
                 </div>
             </div>
@@ -100,7 +94,7 @@
     <section id="come-funziona" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">La Soluzione è Più Semplice di Quanto Pensi</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">La soluzione è più semplice di quanto pensi</h3>
                 <p class="text-xl text-gray-600">Libro Mastro collega automaticamente tutti i tuoi sistemi</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 mb-16">
@@ -110,7 +104,7 @@
                             <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-900 mb-3">1. Colleghi i Tuoi Sistemi</h4>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">1. Colleghi i tuoi sistemi</h4>
                     <p class="text-gray-600">Connetti la tua contabilità, il CRM clienti e i fogli Google con pochi click. Nessuna programmazione richiesta.</p>
                 </div>
                 <div class="text-center">
@@ -119,7 +113,7 @@
                             <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-900 mb-3">2. I Dati Si Sincronizzano</h4>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">2. I dati si sincronizzano</h4>
                     <p class="text-gray-600">Libro Mastro trasferisce automaticamente i dati tra i sistemi. Sempre aggiornati, sempre corretti.</p>
                 </div>
                 <div class="text-center">
@@ -129,8 +123,8 @@
                             <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm8 8v3a1.5 1.5 0 01-3 0v-3a1.5 1.5 0 013 0zm-3-2.5a1.5 1.5 0 00-3 0V16a1.5 1.5 0 003 0v-5.5z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-900 mb-3">3. Ottieni Report Perfetti</h4>
-                    <p class="text-gray-600">Dashboard e report sempre aggiornati. Prendi decisioni basate su dati reali, non su supposizioni.</p>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">3. Ottieni report perfetti</h4>
+                    <p class="text-gray-600"> Cruscotti e report sempre aggiornati. Prendi decisioni basate sulla tua intera banca dati, non ricordi o ipotesi.</p>
                 </div>
             </div>
         </div>
@@ -140,7 +134,7 @@
     <section id="vantaggi" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Cosa Puoi Collegare</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Cosa puoi collegare</h3>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
@@ -149,8 +143,8 @@
                             <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
                         </svg>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Software di Contabilità</h4>
-                    <p class="text-gray-600">FattureInCloud, Danea, TeamSystem, Zucchetti e molti altri</p>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Software di contabilità</h4>
+                    <p class="text-gray-600">FattureInCloud, Aruba, etc.</p>
                 </div>
                 <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
                     <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -158,8 +152,8 @@
                             <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
                         </svg>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 mb-2">CRM Clienti</h4>
-                    <p class="text-gray-600">HubSpot, Salesforce, Pipedrive o il tuo database clienti personalizzato</p>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">CRM clienti</h4>
+                    <p class="text-gray-600">HubSpot, Salesforce, etc.</p>
                 </div>
                 <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
                     <div class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -167,19 +161,11 @@
                             <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"/>
                         </svg>
                     </div>
-                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Fogli Google</h4>
-                    <p class="text-gray-600">Trasforma i tuoi fogli di calcolo in potenti dashboard sempre aggiornati</p>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Fogli di calcolo</h4>
+                    <p class="text-gray-600"> Excel (file), Fogli di Google, Airtable</p>
                 </div>
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Database Personalizzati</h4>
-                    <p class="text-gray-600">Qualsiasi database SQL o sistema che usi per gestire la tua attività</p>
-                </div>
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
+                
+                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition lg:col-start-2">
                     <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
@@ -188,14 +174,48 @@
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">E-commerce</h4>
                     <p class="text-gray-600">Shopify, WooCommerce, Magento - sincronizza ordini e inventario</p>
                 </div>
-                <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition">
-                    <div class="bg-indigo-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-gray-900 mb-2">API Personalizzate</h4>
-                    <p class="text-gray-600">Hai un sistema particolare? Nessun problema, lo colleghiamo anche quello</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Objections Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                    Forse ti stai chiedendo...
+                </h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">"Ho già Excel, perché dovrei cambiare?"</h4>
+                    <p class="text-gray-600">
+                        Excel ha un altro scopo. Non ti conviene usarlo per centralizzare i tuoi dati. A meno che vuoi appesantirlo di molto.                        
+                        Libro Mastro ti fa risparmiare tempo prezioso, evitando errori e duplicazioni.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">"Mi piace la flessibilità dei fogli di calcolo"</h4>
+                    <p class="text-gray-600">
+                        Libro Mastro può convertire alcune tabelle in fogli di calcolo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">"Ho già Zapier"</h4>
+                    <p class="text-gray-600">
+                        Zapier fa meno cose, anche se ha più connettori, e costa di più a parita di compiti che effettivamente vuoi automatizzare.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-gray-900 mb-2">"Non ho budget per un altro software"</h4>
+                        <p class="text-gray-600">
+                            Puoi installare Libro Mastro sul tuo server, gratuitamente ma non senza costi: serve qualcuno che dedichi del tempo e sappia farlo.
+                            <a href="https://staticalmo.com/contact/"
+                            class="text-blue-600 hover:underline">
+                                Oppure puoi delegare l'installazione.
+                            </a>
+                        </p>
                 </div>
             </div>
         </div>
@@ -220,24 +240,14 @@
                     <p class="text-gray-400 mb-4">La soluzione più semplice per unificare i dati della tua azienda.</p>
                 </div>
                 <div>
-                    <h5 class="font-semibold mb-4">Prodotto</h5>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Come Funziona</a></li>
-                        <li><a href="#" class="hover:text-white">Integrazioni</a></li>
-                        <li><a href="#" class="hover:text-white">Sicurezza</a></li>
-                        <li><a href="#" class="hover:text-white">API</a></li>
-                    </ul>
-                </div>
                 <div>
                     <h5 class="font-semibold mb-4">Supporto</h5>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Centro Assistenza</a></li>
-                        <li><a href="#" class="hover:text-white">Documentazione</a></li>
                         <li><a href="#" class="hover:text-white">Video Tutorial</a></li>
 
                     </ul>
                 </div>
-
+            -->
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 STATiCalmo. Tutti i diritti riservati.</p>
@@ -246,3 +256,6 @@
     </footer>
 </body>
 </html>
+</final_file_content>
+
+</replace_in_file>
