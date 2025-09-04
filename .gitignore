@@ -1,0 +1,30 @@
+# --- File dei Segreti ---
+# FONDAMENTALE: Non salvare mai le tue chiavi API e password su GitHub!
+.env
+
+# --- Backend e Infrastruttura Docker ---
+# GitHub Pages non può eseguire questo codice, quindi lo ignoriamo.
+# Serve solo per far funzionare il database e l'app in locale.
+app/
+cloudflared/
+postgres-config/
+docker-compose.yml
+Dockerfile
+
+# --- Artefatti Comuni di Python ---
+# Ignora le cartelle dell'ambiente virtuale
+venv/
+env/
+.venv/
+# Ignora le cartelle della cache di Python
+__pycache__/
+*.pyc
+
+# --- File Specifici del Sistema Operativo e dell'Editor ---
+# Visual Studio Code
+.vscode/
+# JetBrains IDEs (PyCharm, etc.)
+.idea/
+
+# Altro
+AOSprompt.md

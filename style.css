@@ -1,1 +1,180 @@
-body { font-family: 'Be Vietnam Pro', sans-serif; }
+/* =================================================================== */
+/*                          STILE DEFINITIVO v2                        */
+/* =================================================================== */
+
+/* --- FONT --- */
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* --- VARIABILI GLOBALI --- */
+:root {
+    --primary: #0ea5e9; --primary-dark: #0284c7; --primary-glow: rgba(14, 165, 233, 0.2);
+    --secondary: #4f46e5; --accent: #d946ef;
+    --text-dark: #0f172a; --text-medium: #475569;
+    --bg-light: #f8fafc; --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    /* Variabili Dark Mode */
+    --bg-dark: #0f172a; --surface-dark: #1e293b;
+    --text-light: #f1f5f9; --text-muted-dark: #94a3b8;
+    --border-dark: #334155;
+}
+
+/* --- STILI DI BASE --- */
+body {
+    scroll-behavior: smooth;
+    background-color: var(--bg-white);
+    color: var(--text-medium);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transizione fluida tema */
+}
+.hero-section { position: relative; overflow: hidden; background-color: var(--bg-white); }
+
+/* --- ANIMAZIONE CANVAS --- */
+#flow-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; pointer-events: none; opacity: 0; animation: fadeInCanvasLight 2s 0.5s forwards; }
+@keyframes fadeInCanvasLight { to { opacity: 0.2; } }
+@keyframes fadeInCanvasDark { to { opacity: 0.35; } }
+
+/* --- COMPONENTI --- */
+.btn { transition: all 0.3s ease; }
+.btn-primary { background-color: var(--primary); box-shadow: 0 4px 14px 0 var(--primary-glow); }
+.btn-primary:hover { transform: translateY(-2px); background-color: var(--primary-dark); box-shadow: 0 6px 20px 0 var(--primary-glow); }
+.btn-secondary { background-color: var(--bg-white); border: 1px solid var(--border-color); }
+.btn-secondary:hover { border-color: var(--primary); color: var(--primary); background-color: #f0f9ff; }
+.art-card { background-color: var(--bg-white); border-radius: 1.25rem; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.03); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.art-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04); border-color: var(--primary); }
+.gradient-text { background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.grid-pattern { position: relative; }
+.grid-pattern:before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px); background-size: 50px 50px; z-index: 0; }
+.grid-pattern > * { position: relative; z-index: 1; }
+
+/* --- HEADER DINAMICO --- */
+header.sticky { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--border-color); }
+#main-header.header-scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05); }
+#main-header.header-scrolled #nav-container { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+
+/* --- SEZIONE "PER CHI È" --- */
+.who-is-it-for-card { background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 2rem; height: 100%; }
+.card-header { display: flex; align-items: center; margin-bottom: 1.5rem; }
+.card-icon { width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0; }
+.card-icon.success { background-color: #d1fae5; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.2); }
+.card-icon.success svg { color: #059669; }
+.card-icon.danger { background-color: #fee2e2; box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.2); }
+.card-icon.danger svg { color: #dc2626; }
+.card-title { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
+.benefit-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+.benefit-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem; line-height: 1.6; color: var(--text-medium); }
+.benefit-list li span strong { color: var(--text-dark); font-weight: 600; }
+
+/* =================================================================== */
+/*                 STILI PER IL DARK MODE (REVISIONATO)                */
+/* =================================================================== */
+.dark body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* Sovrascrivi SOLO gli sfondi delle sezioni dirette */
+.dark section.hero-section,
+.dark section.bg-white {
+    background-color: var(--bg-dark) !important;
+}
+.dark section.bg-slate-50 {
+    background-color: var(--surface-dark) !important;
+}
+
+/* Testi */
+.dark .text-slate-900, .dark h1, .dark h2, .dark h3, .dark h4 {
+    color: var(--text-light) !important;
+}
+.dark .text-slate-800, .dark .text-slate-600, .dark p {
+    color: var(--text-muted-dark) !important;
+}
+/* ECCEZIONE: il testo del gradiente deve rimanere visibile */
+.dark .gradient-text {
+    /* Mantiene lo stile originale, non viene sovrascritto */
+    -webkit-text-fill-color: transparent; 
+}
+
+
+/* Bordi */
+.dark .border, .dark .border-slate-200 { border-color: var(--border-dark) !important; }
+
+/* Header */
+.dark header.sticky { background-color: rgba(15, 23, 42, 0.85); border-bottom-color: var(--border-dark); }
+.dark #main-header.header-scrolled { background-color: rgba(15, 23, 42, 0.95); }
+
+/* Card */
+.dark .art-card, .dark .who-is-it-for-card {
+    background-color: var(--surface-dark);
+    border-color: var(--border-dark) !important;
+}
+.dark .art-card:hover { border-color: var(--primary) !important; }
+
+/* Bottoni */
+.dark .btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border-color: var(--border-dark);
+}
+.dark .btn-secondary:hover {
+    background-color: var(--surface-dark);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.dark .hero-section .btn-secondary {
+    color: var(--text-light) !important;
+    border-color: var(--text-light) !important;
+}
+.dark .hero-section .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--text-light) !important;
+}
+
+/* Pattern e Animazione */
+.dark .grid-pattern:before {
+    background-image: linear-gradient(rgba(100, 116, 139, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 116, 139, 0.1) 1px, transparent 1px);
+}
+.dark #flow-canvas {
+    animation-name: fadeInCanvasDark;
+}
+
+/* Stili specifici per le card in Dark Mode */
+.dark .who-is-it-for-card {
+    background-color: var(--surface-dark); /* Sfondo card più chiaro del body */
+    border-color: var(--border-dark) !important;
+}
+.dark .who-is-it-for-card .card-title,
+.dark .who-is-it-for-card .benefit-list li span {
+    color: var(--text-light) !important; /* Testo principale chiaro */
+}
+.dark .who-is-it-for-card .benefit-list li span strong {
+    color: white !important; /* Grassetto ancora più evidente */
+}
+
+/* --- Correzione specifica per le card delle FAQ --- */
+.dark .bg-slate-50.border-slate-200 {
+    background-color: var(--surface-dark) !important;
+    border-color: var(--border-dark) !important;
+}
+
+.dark .bg-slate-50.border-slate-200 h4 {
+    color: var(--text-light) !important;
+}
+
+.dark .bg-slate-50.border-slate-200 p {
+    color: var(--text-muted-dark) !important;
+}
+
+/* =================================================================== */
+/*  STILI PER FEEDBACK VISIVO BOTTONI                                  */
+/* =================================================================== */
+
+/* Prepara l'icona (SVG) all'interno del bottone per la transizione */
+.btn-primary svg {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando il mouse è sopra il bottone, sposta l'icona a destra */
+.btn-primary:hover svg {
+    transform: translateX(5px);
+}
